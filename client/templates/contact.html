@@ -1,0 +1,57 @@
+<template name="contact">
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 col-sm-9 col-xs-11 center-block">
+          <h2 class="text-center">Get in Touch</h2>
+
+          <h6 class="text-center">New projects intrigue me, old projects interest me.</h6>
+
+          <form class="form-horizontal" autocomplete="off">
+            <legend class="hide">Contact Form</legend>
+
+            <div class="alert alert-dismissable">
+              <button type="button" class="close">x</button>
+            </div>
+
+            <fieldset>
+              <div class="form-group">
+                <label for="name" class="control-label">Name</label>
+
+                <input type="text" class="form-control" id="name" placeholder="Name" maxlength="50">
+
+                <span class="character-count">0 / 50</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="control-label">Email</label>
+
+                <input type="email" class="form-control" id="email" placeholder="Email" maxlength="100">
+
+                <span class="character-count">0 / 100</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="control-label">Message</label>
+
+                <textarea class="form-control" id="message" placeholder="Message" rows="5" maxlength="500"></textarea>
+
+                <span class="character-count">0 / 500</span>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-6 col-xs-11">
+                  {{> reCAPTCHA}}
+                </div>
+
+                <div class="col-sm-6 col-xs-11">
+                  <button type="submit" class="btn btn-default pull-right">Send It</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
