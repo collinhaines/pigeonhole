@@ -13,5 +13,7 @@ Template.nav.events({
     });
 
     $('.navbar-toggle').click();
+
+    event.preventDefault();
   } // 'click nav .nav li': function (event)
 });
