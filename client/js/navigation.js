@@ -12,8 +12,11 @@ Template.nav.events({
       scrollTop: $(event.target.hash).position().top
     });
 
-    $('.navbar-toggle').click();
+    if ($('.navbar-collapse').hasClass('in')) {
+      $('.navbar-toggle').click();
+    } // if ($('.navbar-collapse').hasClass('in'))
 
+    event.target.blur();
     event.preventDefault();
   } // 'click nav .nav li': function (event)
 });
