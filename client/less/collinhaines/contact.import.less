@@ -17,8 +17,7 @@
   }
 
   .alert {
-    opacity: 0;
-
+    .opacity(0);
     .transition(opacity 240ms);
   }
 
@@ -35,8 +34,7 @@
     top: 10px;
     right: 0;
 
-    opacity: 0;
-
+    .opacity(0);
     .transition(opacity 240ms);
   }
 
@@ -54,23 +52,24 @@
     font-size: 16px;
     font-weight: 400;
 
-    opacity: 0.4;
+    .opacity(0.4);
     pointer-events: none;
 
-    transform: translate3d(0, 22px, 0) scale(1);
-    transition: 240ms;
-    transform-origin: left top;
+    .scale(1);
+    .translate3d(0, 22px, 0);
+    .transform-origin(left top);
+    .transition-duration(240ms);
   }
 
   .form-group.focused .control-label,
   .form-group.has-text .control-label {
-    opacity: 1;
-    transform: scale(0.75);
+    .opacity(1);
+    .scale(0.75);
   }
 
   .form-group.focused .character-count,
   .form-group.has-text .character-count {
-    opacity: 1;
+    .opacity(1);
   }
 
   .form-control {
@@ -79,11 +78,11 @@
 
   .form-control::-webkit-input-placeholder {
     color: transparent;
-    transition: 240ms;
+    .transition-duration(240ms);
   }
 
   .form-control:focus::-webkit-input-placeholder {
-    transition: none;
+    .transition(none);
   }
 
   .form-group.focused .form-control::-webkit-input-placeholder {
