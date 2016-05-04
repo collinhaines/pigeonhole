@@ -20,5 +20,6 @@ insecure                # Allow all DB writes from clients (for prototyping)
 less                    # Leaner CSS language
 http                    # Make HTTP calls to remote servers
 email                   # Send email messages
-standard-minifier-css
-standard-minifier-js
+standard-minifier-css   # Standard css minifier used with Meteor apps by default
+standard-minifier-js    # Standard javascript minifiers used with Meteor apps by default
+iron:router             # Routing specifically designed for Meteor
