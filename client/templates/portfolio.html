@@ -1,0 +1,41 @@
+<template name="portfolio">
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="row text-center header">
+        <div class="col-xs-12">
+          <h2>Works: New and Old</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="portfolio-overview-row animated clearfix" style="display: block;">
+          {{#each items}}
+            <div class="col-sm-6 portfolio-item-preview" data-id="{{_id}}">
+              <img src="/img/{{thumb}}" class="img-responsive" alt="{{title}}">
+
+              <div class="col-xs-12">
+                <p>{{title}}</p>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+
+        <div class="portfolio-detailed-row animated clearfix" style="display: none;">
+          <div class="col-sm-5 portfolio-item-image">
+            <img src="" class="img-responsive" alt="">
+          </div>
+
+          <div class="col-sm-7 portfolio-item-details">
+            <h4></h4>
+
+            <span></span>
+
+            <button type="button" class="btn btn-sm btn-default center-block">
+              <i class="fa fa-arrow-left"></i> Go back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
