@@ -8,3 +8,13 @@
 Meteor.publish('showcase', function () {
   return showcase.find();
 });
+
+showcase.deny({
+  update: function () {
+    return true;
+  }, // update: function ()
+
+  insert: function () {
+    return true;
+  } // insert: function ()
+});
