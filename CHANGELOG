@@ -1,0 +1,15 @@
+v1.1.1
+  - Prevented showcase manipulation from the developer console.
+
+v1.1.0
+  - Implemented Portfolio section.
+
+v1.0.2
+  - Stopped the navigation from doing a flash upon click on larger screens.
+
+v1.0.1
+  - Contact form now scrolls up for smaller displays.
+  - Contact form no longer displays an internal server error.
+
+v1.0.0
+  - Deployed.
