@@ -7,5 +7,9 @@
     "type": "git",
     "url": "https://github.com/collinhaines/pigeonhole"
   },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0"
+  },
   "license": "MIT"
 }
