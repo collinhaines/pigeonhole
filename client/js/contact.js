@@ -1,8 +1,9 @@
 /*!
- * contact.js
+ * pigeonhole
+ * https://collinhaines.com/
  *
- * Author:    Collin Haines
- * Copyright: 2016. All Rights Reserved.
+ * Copyright 2016 Collin Haines
+ * Licensed under the MIT license.
  */
 
 Template.contact.events({
