@@ -8,10 +8,18 @@ module.exports = function (grunt) {
           jQuery: true
         }
       }
+    },
+    lesslint: {
+      src: ['client/less/*.less'],
+      options: {
+        imports:     ['client/less/**/*.import.less'],
+        failOnError: false
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-lesslint');
 
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['jshint', 'lesslint']);
 }; // module.exports = function (grunt)
