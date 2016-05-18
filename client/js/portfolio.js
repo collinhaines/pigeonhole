@@ -6,6 +6,10 @@
  * Licensed under the MIT license.
  */
 
+Template.portfolio.onCreated(function () {
+  Meteor.subscribe('showcase');
+});
+
 Template.portfolio.helpers({
   items: function () {
     return showcase.find({}, {
