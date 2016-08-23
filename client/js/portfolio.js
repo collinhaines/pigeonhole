@@ -38,13 +38,14 @@ Template.portfolio.events({
     // Assign the header.
     $('.portfolio-detailed-row h4').text(item.title);
 
-    // Create and assign the listing.
-    var list = '<dl class="dl-horizontal">';
-    for (var i = 0; i < item.lists.length; i++) {
-      list += '<dt>' + item.lists[i].type + '</dt><dd>' + item.lists[i].data + '</dd>';
-    } // for (var i = 0; i < item.lists.length; i++)
+    // Assign the types.
+    var types = ['description', 'improvement', 'date', 'languages', 'frameworks'];
+    for (var i = 0; i < types.length; i++) {
+      $('#portfolio-detailed-' + types[i]).text(item[types[i]]);
+    }
 
-    $('.portfolio-detailed-row span').html(list + '</dl>');
+    // Assign the URL.
+    $('#portfolio-detailed-url a').attr('href', 'http://' + item.url).text(item.url);
 
     // Animate visuals.
     $('.portfolio-overview-row').removeClass('fadeInLeft').addClass('fadeOutLeft').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
