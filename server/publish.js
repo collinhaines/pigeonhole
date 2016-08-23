@@ -16,5 +16,9 @@ showcase.deny({
 
   insert: function () {
     return true;
-  } // insert: function ()
+  }, // insert: function ()
+
+  remove: function () {
+    return true;
+  } // remove: function ()
 });
