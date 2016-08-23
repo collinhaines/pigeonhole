@@ -1,4 +1,6 @@
-## Collin Haines
+[![Build Status](https://travis-ci.org/collinhaines/pigeonhole.svg?branch=master)](https://travis-ci.org/collinhaines/pigeonhole)
+
+# Collin Haines
 A portfolio website built with Meteor.
 
 ## Credits and Acknowledgments
