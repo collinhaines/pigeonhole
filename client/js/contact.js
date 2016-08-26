@@ -57,7 +57,7 @@ Template.contact.events({
         // Toggle alert status.
         $('#contact .alert').removeClass('alert-warning').addClass('alert-success');
 
-        // toggle alert message.
+        // Toggle alert message.
         if ($('#contact .alert p').length) {
           $('#contact .alert p').text(result);
         } else {
@@ -69,6 +69,14 @@ Template.contact.events({
 
         // Reset inputs.
         $('#contact .form-control').val('');
+
+        // Reset visuals.
+        $('#contact .form-group').removeClass('has-text focused');
+
+        // Reset character count.
+        $('#contact .form-group span').each(function () {
+          $(this).text('0 / ' + $(this).attr('maxlength'));
+        });
       } // if (error)
 
       // Show the alert.
