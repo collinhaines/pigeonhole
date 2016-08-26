@@ -1,26 +1,18 @@
-# Meteor packages used by this project, one per line.
-# Check this file (and the other files in this directory) into your repository.
-#
-# 'meteor add' and 'meteor remove' will edit this file for you,
-# but you can also edit it by hand.
-
-meteor-base@1.0.4               # Packages every Meteor app needs to have
-mobile-experience@1.0.4         # Packages for a great mobile UX
-mongo@1.1.12                    # The database Meteor supports right now
-blaze-html-templates@1.0.4      # Compile .html files into Meteor Blaze views
-session@1.1.6                   # Client-side reactive dictionary for your app
-jquery@1.11.9                   # Helpful client-side library
-tracker@1.1.0                   # Meteor's client-side reactive programming library
-
-es5-shim@4.6.14                 # ECMAScript 5 compatibility for older browsers.
-ecmascript@0.5.8                # Enable ECMAScript2015+ syntax in app code
-
-less@2.7.5                      # Leaner CSS language
-http@1.2.9                      # Make HTTP calls to remote servers
-email@1.1.17                    # Send email messages
-standard-minifier-css@1.2.0     # Standard css minifier used with Meteor apps by default
-standard-minifier-js@1.2.0      # Standard javascript minifiers used with Meteor apps by default
-iron:router                     # Routing specifically designed for Meteor
-natestrauser:animate-css        # Animate.css packaged for meteor
+blaze-html-templates@1.0.4
+dispatch:mocha-phantomjs@0.1.7
+ecmascript@0.5.8
+email@1.1.17
+es5-shim@4.6.14
+http@1.2.9
+iron:router@1.0.13
+jquery@1.11.9
+less@2.7.5
+meteor-base@1.0.4
+mobile-experience@1.0.4
+mongo@1.1.12
+natestrauser:animate-css@3.5.1
+session@1.1.6
 shell-server@0.2.1
-dispatch:mocha-phantomjs
+standard-minifier-css@1.2.0
+standard-minifier-js@1.2.0
+tracker@1.1.0
