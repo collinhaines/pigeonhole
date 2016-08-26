@@ -1,8 +1,14 @@
-# 08/23/16 - Hiding until unit testing is done at a later date.
+sudo: false
+
 language: node_js
 
 node_js:
   - "node"
+
+cache:
+  directories:
+    - $HOME/.meteor
+    - $HOME/.npm
 
 notifications:
   email: false
