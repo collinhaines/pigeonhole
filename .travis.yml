@@ -13,3 +13,6 @@ cache:
 notifications:
   email: false
   slack: collinhaines:puhDfkIE5qaclQJKdDwyAPbd
+
+before_install:
+  - if [ ! -e $HOME/.meteor/meteor ]; then curl -k https://install.meteor.com | sh; fi
