@@ -8,6 +8,12 @@
     "type": "git",
     "url": "https://github.com/collinhaines/pigeonhole"
   },
+  "scripts": {
+    "test": "meteor test --driver-package=practicalmeteor:mocha --settings settings.json"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "^0.2.3"
+  },
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-banner": "^0.6.0",
