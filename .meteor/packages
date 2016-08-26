@@ -23,4 +23,4 @@ standard-minifier-js@1.2.0      # Standard javascript minifiers used with Meteor
 iron:router                     # Routing specifically designed for Meteor
 natestrauser:animate-css        # Animate.css packaged for meteor
 shell-server@0.2.1
-practicalmeteor:mocha
+dispatch:mocha-phantomjs
