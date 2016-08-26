@@ -41,11 +41,7 @@ Template.contact.events({
         $('#contact .alert').removeClass('alert-success').addClass('alert-warning');
 
         // Toggle alert message.
-        if ($('#contact .alert p').length) {
-          $('#contact .alert p').text(error.reason);
-        } else {
-          $('<p>' + error.reason + '</p>').insertAfter($('#contact .alert button'));
-        } // if ($('#contact .alert p'))
+        $('#contact .alert p').text(error.reason);
 
         // Toggle invalid inputs.
         $('#contact .has-warning').removeClass('has-warning');
@@ -58,11 +54,7 @@ Template.contact.events({
         $('#contact .alert').removeClass('alert-warning').addClass('alert-success');
 
         // Toggle alert message.
-        if ($('#contact .alert p').length) {
-          $('#contact .alert p').text(result);
-        } else {
-          $('<p>' + result + '</p>').insertAfter($('#contact .alert button'));
-        } // if ($('#contact .alert p').length)
+        $('#contact .alert p').text(result);
 
         // Remove any invalid inputs.
         $('#contact .has-warning').removeClass('has-warning');
