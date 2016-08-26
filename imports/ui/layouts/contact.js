@@ -1,33 +1,33 @@
-/*!
- * pigeonhole
- * https://collinhaines.com/
- *
- * Copyright 2016 Collin Haines
- * Licensed under the MIT license.
- */
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { $ } from 'meteor/jquery';
+
+import './contact.html';
+
+import '../components/recaptcha.js';
 
 Template.contact.events({
   // Toggle material floating label.
-  'focus .form-control, blur .form-control': function (event) {
+  'focus .form-control, blur .form-control'(event) {
     $(event.target).parents('.form-group').toggleClass('focused');
-  }, // 'focus .form-control, blur .form-control': function (event)
+  },
 
   // Update character count.
-  'keyup .form-control': function (event) {
+  'keyup .form-control'(event) {
     $(event.target).parent().addClass('has-text').find('span').text(event.target.value.trim().length + ' / ' + $(event.target).attr('maxlength'));
 
     if (event.target.value.trim() === '') {
       $(event.target).parent().removeClass('has-text');
-    } // if (event.target.value.trim() === '')
-  }, // 'keyup .form-control': function (event)
+    }
+  },
 
   // Close an alert.
-  'click .alert .close': function (event) {
+  'click .alert .close'(event) {
     $(event.target).parent().removeClass('is-visible');
-  }, // 'click .alert .close': function (event)
+  },
 
   // User has submitted a form - send to server.
-  'submit #contact form': function (event) {
+  'submit #contact form'(event) {
     Meteor.call('contact', {
       name:    $('#contact #name').val().trim(),
       email:   $('#contact #email').val().trim(),
@@ -69,12 +69,12 @@ Template.contact.events({
         $('#contact .form-group span').each(function () {
           $(this).text('0 / ' + $(this).attr('maxlength'));
         });
-      } // if (error)
+      }
 
       // Show the alert.
       $('#contact .alert').addClass('is-visible');
     });
 
     event.preventDefault();
-  } // 'submit #contact form': function (event)
+  }
 });

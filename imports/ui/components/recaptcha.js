@@ -1,17 +1,15 @@
-/*!
- * pigeonhole
- * https://collinhaines.com/
- *
- * Copyright 2016 Collin Haines
- * Licensed under the MIT license.
- */
+import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
+import { $ } from 'meteor/jquery';
+
+import './recaptcha.html';
 
 Template.reCAPTCHA.onCreated(function () {
   $.getScript('https://www.google.com/recaptcha/api.js');
 });
 
 Template.reCAPTCHA.helpers({
-  key: function () {
+  key() {
     return Meteor.settings.public.captchaKey;
-  } // key: function ()
+  }
 });
