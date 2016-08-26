@@ -16,3 +16,6 @@ notifications:
 
 before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl -k https://install.meteor.com | sh; fi
+
+before_script:
+  - "export PATH=$HOME/.meteor:$PATH"
