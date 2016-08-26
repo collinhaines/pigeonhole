@@ -1,9 +1,6 @@
-/*!
- * methods.js
- *
- * Author:    Collin Haines
- * Copyright: 2016. All Rights Reserved.
- */
+import { Meteor } from 'meteor/meteor';
+import { Email } from 'meteor/email';
+import { HTTP } from 'meteor/http';
 
 Meteor.methods({
   contact: function (data) {
@@ -12,32 +9,32 @@ Meteor.methods({
       throw new Meteor.Error('#name', 'Please fill out the name field.');
     } else if (data.name.trim().length > 50) {
       throw new Meteor.Error('#name', 'Please do not exceed 50 characters for the name field.');
-    } // if (data.name.trim() === '')
+    }
 
     // Validate email.
     if (data.email.trim() === '') {
       throw new Meteor.Error('#email', 'Please fill out the email field.');
     } else if (data.email.trim().length > 100) {
       throw new Meteor.Error('#email', 'Please do not exceed 100 characters for the email field.');
-    } // if (data.email.trim() === '')
+    }
 
     // Validate message.
     if (data.message.trim() === '') {
       throw new Meteor.Error('#message', 'Please fill out the message field.');
     } else if (data.message.trim().length > 500) {
       throw new Meteor.Error('#message', 'Please do not exceed 500 characters for the message field.');
-    } // if (data.message.trim() === '')
+    }
 
     // Validate reCAPTCHA.
     if (data.captcha.trim() === '') {
-      throw new Meteor.Error('', 'Please complete the CAPTCHA.');
-    } // if (data.captcha.trim() === '')
+      throw new Meteor.Error('#this-is-nothing', 'Please complete the CAPTCHA.');
+    }
 
-    var response;
-    var parameters = 'secret=' + Meteor.settings.private.captchaKey + '&remoteip=' + this.connection.clientAddress + '&response=' + data.captcha;
+    let response;
+    const parameters = 'secret=' + Meteor.settings.private.captchaKey + '&remoteip=' + this.connection.clientAddress + '&response=' + data.captcha;
 
     try {
-      response = Meteor.http.call('post', 'https://www.google.com/recaptcha/api/siteverify', {
+      response = HTTP.call('post', 'https://www.google.com/recaptcha/api/siteverify', {
         content: parameters.toString('utf8'),
         headers: {
           'Content-Type':   'application/x-www-form-urlencoded',
@@ -59,13 +56,12 @@ Meteor.methods({
         throw new Meteor.Error('invalid-input-response', 'The response parameter is invalid or malformed.');
       } else {
         throw new Meteor.Error('???', 'This error should not appear unless Google has redone their error codes.');
-      } // if (response.data['error-codes'][0] === 'missing-input-secret')
-    } // if (response.data.success === false)
+      }
+    }
 
     this.unblock();
 
     Email.send({
-      // TODO: Set up info@collinhaines.com
       to:      'collinhaines@me.com',
       from:    data.name + ' <' + data.email + '>',
       subject: 'Contact Form Submission',
@@ -73,5 +69,5 @@ Meteor.methods({
     });
 
     return 'Thank you ' + data.name.trim() + ', your message has been sent!';
-  } // contact: function (data)
+  }
 });
