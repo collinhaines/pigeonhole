@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "meteor test --once --driver-package dispatch:mocha-phantomjs --settings settings.json",
-    "test-dev": "meteor test --driver-package dispatch:mocha-phantomjs --port 3005 --settings settings.json"
+    "test-dev": "TEST_WATCH=1 meteor test --driver-package dispatch:mocha-phantomjs --port 3005 --settings settings.json"
   },
   "dependencies": {
     "meteor-node-stubs": "^0.2.3"
