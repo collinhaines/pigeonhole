@@ -12,6 +12,7 @@ meteor-base@1.0.4
 mobile-experience@1.0.4
 mongo@1.1.12
 natestrauser:animate-css@3.5.1
+practicalmeteor:mocha@2.4.5_6
 session@1.1.6
 shell-server@0.2.1
 standard-minifier-css@1.2.0

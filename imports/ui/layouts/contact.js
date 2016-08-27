@@ -6,6 +6,30 @@ import './contact.html';
 
 import '../components/recaptcha.js';
 
+Template.contact.onCreated(function contactCreated() {
+  this.alertError = (element, text) => {
+    // Render the alert and its text.
+    $('#contact .alert')
+      .removeClass('alert-success alert-danger alert-info')
+      .addClass('alert-warning')
+      .find('p')
+      .text(text);
+
+    // Remove any other warnings.
+    $('#contact .form-group').removeClass('has-warning');
+
+    // Add the current field warning.
+    $('#contact ' + element)
+      .parent()
+      .addClass('has-warning');
+
+    // Show the alert.
+    if (!$('#contact .alert').hasClass('is-visible')) {
+      $('#contact .alert').addClass('is-visible');
+    }
+  };
+});
+
 Template.contact.events({
   // Toggle material floating label.
   'focus .form-control, blur .form-control'(event) {
@@ -27,25 +51,67 @@ Template.contact.events({
   },
 
   // User has submitted a form - send to server.
-  'submit #contact form'(event) {
+  'submit #contact form'(event, instance) {
+    const name    = $('#contact #name').val().trim();
+    const email   = $('#contact #email').val().trim();
+    const message = $('#contact #message').val().trim();
+    let captcha;
+
+    // Assign the CAPTCHA on the live server.
+    if (!Meteor.isTest) {
+      captcha = grecaptcha.getResponse();
+    }
+
+    // Validate name.
+    if (name === '') {
+      instance.alertError('#name', 'Please fill out the name field.');
+      event.preventDefault();
+      return false;
+    } else if (name.length > 50) {
+      instance.alertError('#name', 'Please do not exceed 50 characters for the name field.');
+      event.preventDefault();
+      return false;
+    }
+
+    // Validate email.
+    if (email === '') {
+      instance.alertError('#email', 'Please fill out the email field.');
+      event.preventDefault();
+      return false;
+    } else if (email.length > 100) {
+      instance.alertError('#email', 'Please do not exceed 100 characters for the email field.');
+      event.preventDefault();
+      return false;
+    }
+
+    // Validate message.
+    if (message === '') {
+      instance.alertError('#message', 'Please fill out the message field.');
+      event.preventDefault();
+      return false;
+    } else if (message.length > 500) {
+      instance.alertError('#message', 'Please do not exceed 500 characters for the message field.');
+      event.preventDefault();
+      return false;
+    }
+
+    // Validate reCAPTCHA.
+    if (captcha === '') {
+      instance.alertError('#this-is-nothing', 'Please complete the CAPTCHA.');
+      event.preventDefault();
+      return false;
+    }
+
     Meteor.call('contact', {
-      name:    $('#contact #name').val().trim(),
-      email:   $('#contact #email').val().trim(),
-      message: $('#contact #message').val().trim(),
-      captcha: grecaptcha.getResponse()
+      name:    name,
+      email:   email,
+      message: message,
+      captcha: captcha
     }, function (error, result) {
       if (error) {
         console.error(error);
 
-        // Toggle alert status.
-        $('#contact .alert').removeClass('alert-success').addClass('alert-warning');
-
-        // Toggle alert message.
-        $('#contact .alert p').text(error.reason);
-
-        // Toggle invalid inputs.
-        $('#contact .has-warning').removeClass('has-warning');
-        $('#contact ' + error.error).parent().addClass('has-warning');
+        instance.alertError(error.error, error.reason);
       } else {
         // Reset reCAPTCHA.
         grecaptcha.reset();
@@ -72,7 +138,9 @@ Template.contact.events({
       }
 
       // Show the alert.
-      $('#contact .alert').addClass('is-visible');
+      if (!$('#contact .alert').hasClass('is-visible')) {
+        $('#contact .alert').addClass('is-visible');
+      }
     });
 
     event.preventDefault();
