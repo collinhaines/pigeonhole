@@ -4,13 +4,15 @@ ecmascript@0.5.8
 email@1.1.17
 es5-shim@4.6.14
 http@1.2.9
-iron:router@1.0.13
 jquery@1.11.9
+kadira:blaze-layout@2.3.0
+kadira:flow-router@2.12.1
 less@2.7.5
 meteor-base@1.0.4
 mobile-experience@1.0.4
 mongo@1.1.12
 natestrauser:animate-css@3.5.1
+practicalmeteor:mocha@2.4.5_6
 session@1.1.6
 shell-server@0.2.1
 standard-minifier-css@1.2.0

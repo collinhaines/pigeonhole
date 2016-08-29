@@ -1,7 +1,7 @@
 {
   "name": "pigeonhole",
   "homepage": "https://collinhaines.com/",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "The electronic equivalent of a pigeonhole.",
   "author": "Collin Haines",
   "repository": {
@@ -9,18 +9,33 @@
     "url": "https://github.com/collinhaines/pigeonhole"
   },
   "scripts": {
-    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs --settings settings.json",
-    "test-dev": "meteor test --driver-package dispatch:mocha-phantomjs --port 3005 --settings settings.json"
+    "start": "meteor --settings settings.json",
+    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs --settings settings.json"
   },
   "dependencies": {
     "meteor-node-stubs": "^0.2.3"
   },
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-meteor": "^4.0.0",
     "grunt": "^1.0.1",
-    "grunt-banner": "^0.6.0",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
     "grunt-lesslint": "^3.2.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ]
   },
   "license": "MIT"
 }
