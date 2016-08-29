@@ -1,3 +1,6 @@
+v1.2.0
+  - Updated Meteor's code structure.
+
 v1.1.2
   - Added CodePen link.
   - Moved showcase connection from `waitOn` in routes.js to `onCreated` in portfolio.js.
