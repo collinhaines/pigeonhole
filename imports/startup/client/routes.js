@@ -6,7 +6,7 @@ import '/imports/ui/components/navigation.js';
 import '/imports/ui/components/footer.js';
 
 // Load template.
-import '/imports/ui/pages/main-page.js';
+import '/imports/ui/layouts/main-page.js';
 
 FlowRouter.route('/', {
   name: 'Home',
