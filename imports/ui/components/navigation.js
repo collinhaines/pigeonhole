@@ -2,6 +2,9 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { $ } from 'meteor/jquery';
 
+import '/imports/library/collapse.js';
+import '/imports/library/transition.js';
+
 import './navigation.html';
 
 Template.navigation.onCreated(function () {
