@@ -60,7 +60,7 @@ practicalmeteor:loglevel@1.2.0_2
 practicalmeteor:mocha@2.4.5_6
 practicalmeteor:mocha-core@1.0.1
 practicalmeteor:sinon@1.14.1_2
-promise@0.8.4
+promise@0.8.7
 random@1.0.10
 reactive-dict@1.1.8
 reactive-var@1.0.10
