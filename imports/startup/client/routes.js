@@ -5,12 +5,21 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import '/imports/ui/components/navigation.js';
 import '/imports/ui/components/footer.js';
 
-// Load template.
-import '/imports/ui/layouts/main-page.js';
+// Load layout.
+import '/imports/ui/layouts/overlord.js';
+
+// Load pages.
+import '/imports/ui/pages/main-page.js';
+import '/imports/ui/pages/resume.js';
 
 FlowRouter.route('/', {
-  name: 'Home',
   action() {
-    BlazeLayout.render('main-page');
+    BlazeLayout.render('overlord', { main: 'main-page' });
+  }
+});
+
+FlowRouter.route('/resume', {
+  action() {
+    BlazeLayout.render('overlord', { main: 'resume' });
   }
 });
