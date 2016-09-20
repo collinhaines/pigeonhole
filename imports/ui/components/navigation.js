@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import { $ } from 'meteor/jquery';
 
 import '/imports/library/collapse.js';
@@ -12,6 +13,12 @@ Template.navigation.onCreated(function () {
     .done(function () {
       Raven.config('https://fc1dccaab3d8469c813eb25abd9dfd30@app.getsentry.com/95071').install();
     });
+});
+
+Template.navigation.helpers({
+  position() {
+    return FlowRouter.current().path === '/' ? 'fixed' : 'static';
+  }
 });
 
 Template.navigation.events({
