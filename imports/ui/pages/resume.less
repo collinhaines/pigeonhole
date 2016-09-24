@@ -1,0 +1,39 @@
+//
+// Resume
+// --------------------------------------------------
+
+// Classes used in more than one place.
+.spacer {
+  width: 125px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+
+  border: 1px solid @text-muted;
+}
+
+// Repetitive values
+.resume-awards,
+.resume-skills,
+.resume-projects,
+.resume-education,
+.resume-experience {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+// Splash section
+.resume-main {
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  border-bottom: 1px solid #000;
+
+  @media (min-width: @screen-sm-min) {
+    background-size: cover;
+    background-image: url(/img/resume-background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

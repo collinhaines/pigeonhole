@@ -1,12 +1,10 @@
-import { Meteor } from 'meteor/meteor';
+import './navigation.html';
+
 import { Template } from 'meteor/templating';
-import { FlowRouter } from 'meteor/kadira:flow-router';
 import { $ } from 'meteor/jquery';
 
 import '/imports/library/collapse.js';
 import '/imports/library/transition.js';
-
-import './navigation.html';
 
 Template.navigation.onCreated(function () {
   $.getScript('https://cdn.ravenjs.com/3.5.1/raven.min.js')
@@ -15,24 +13,14 @@ Template.navigation.onCreated(function () {
     });
 });
 
-Template.navigation.helpers({
-  position() {
-    return FlowRouter.current().path === '/' ? 'fixed' : 'static';
-  }
-});
-
 Template.navigation.events({
-  // Scroll the user to the specified location.
-  'click nav .nav li'(event) {
-    $('html, body').animate({
-      scrollTop: $(event.target.hash).position().top
-    });
-
+  'click nav .nav li'() {
     if ($('.navbar-collapse').hasClass('in')) {
       $('.navbar-toggle').click();
     }
+  },
 
+  'click nav a'(event) {
     event.target.blur();
-    event.preventDefault();
   }
 });

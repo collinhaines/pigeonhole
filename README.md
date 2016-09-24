@@ -9,4 +9,6 @@ A portfolio website built with Meteor.
 * Font-Awesome
 * jQuery
 * Meteor
-* Unsplash ([Jeff Sheldon](https://unsplash.com/photos/9dI3g8owHiI))
+* Unsplash:
+  * [Home Splash Background Image - Jeff Sheldon](https://unsplash.com/photos/9dI3g8owHiI)
+  * [Resume Splash Background Image - Luis Llerena](https://unsplash.com/photos/6g0KJWnBhxg)
