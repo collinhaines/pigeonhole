@@ -6,7 +6,7 @@ import { Showcase } from '/imports/api/showcase.js';
 
 import './portfolio.html';
 
-Template.portfolio.onCreated(function () {
+Template.portfolioSection.onCreated(function () {
   this.subscribe('showcase');
 
   this.renderDetail = () => {
@@ -89,13 +89,13 @@ Template.portfolio.onCreated(function () {
   };
 });
 
-Template.portfolio.helpers({
+Template.portfolioSection.helpers({
   items() {
     return Showcase.find({}, { sort: { title: 1 } });;
   }
 });
 
-Template.portfolio.events({
+Template.portfolioSection.events({
   // User has clicked an image, show the details.
   'click .portfolio-overview-row .portfolio-item-preview img'(event, instance) {
     instance.renderDetail();
