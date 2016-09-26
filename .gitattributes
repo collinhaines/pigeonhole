@@ -1,0 +1,3 @@
+imports/ui/library/*.js                    linguist-vendored=false
+imports/ui/stylesheets/bootstrap/**/.less  linguist-vendored=false
+imports/ui/stylesheets/bootswatch/*.less   linguist-vendored=false
