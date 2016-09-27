@@ -1,0 +1,40 @@
+<template name="viewer">
+  <section class="viewer-main">
+    <div class="background-image" style="background-image: url(/img/portfolio-backgrounds/{{item.image}})"></div>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-5 col-sm-10 col-xs-11 center-block splash-text">
+          <h1>{{item.title}}</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="viewer-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Description</h3>
+
+          <p class="text-justify">{{item.description}}</p>
+        </div>
+
+        <div class="col-sm-6">
+          <h3>Details</h3>
+
+          <dl>
+            <dt>Date</dt>
+            <dd>{{item.date}}</dd>
+
+            <dt>Languages</dt>
+            <dd>{{item.languages}}</dd>
+
+            <dt>Frameworks</dt>
+            <dd>{{item.frameworks}}</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
