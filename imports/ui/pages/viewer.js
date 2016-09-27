@@ -9,7 +9,11 @@ import { Portfolio } from '/imports/api/portfolio.js';
 
 Template.viewer.onCreated(function () {
   Tracker.autorun(function () {
-    Meteor.subscribe('portfolio-item', FlowRouter.getParam('title'));
+    // When the user goes back, `check` runs against an undefined parameter
+    // throwing unnecessary errors into the server log. This will stop it.
+    if (FlowRouter.getParam('title') !== undefined) {
+      Meteor.subscribe('portfolio-item', FlowRouter.getParam('title'));
+    }
   });
 });
 
