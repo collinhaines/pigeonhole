@@ -41,4 +41,25 @@
       color: @text-muted;
     }
   }
+
+  .portfolio-item {
+    display: block;
+
+    .panel {
+      .transition(background-color 0.3s ease-in-out);
+    }
+
+    .portfolio-item-title {
+      color: initial;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      .panel {
+        background-color: #ececec;
+      }
+    }
+  }
 }

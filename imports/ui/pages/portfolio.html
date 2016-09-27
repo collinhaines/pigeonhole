@@ -31,12 +31,12 @@
       <div class="row">
         {{#each item in portfolio}}
           <div class="col-sm-4">
-            <a href="/portfolio/{{renderLink item.title}}">
+            <a href="/portfolio/{{renderLink item.title}}" class="portfolio-item">
               <div class="panel panel-default">
                 <div class="panel-body">
                   <img src="/img/portfolio-thumbs/{{item.image}}" class="img-responsive" alt="{{item.title}}">
 
-                  <p>{{item.title}}</p>
+                  <h4 class="portfolio-item-title">{{item.title}}</h4>
                 </div>
               </div>
             </a>
