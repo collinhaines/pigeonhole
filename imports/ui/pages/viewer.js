@@ -18,7 +18,15 @@ Template.viewer.helpers({
     return Portfolio.findOne({ title: new RegExp(FlowRouter.getParam('title'), 'i') });
   },
 
-  hasSomething(date, languages, frameworks) {
-    return date !== undefined || languages !== undefined || frameworks !== undefined;
+  isWebType(type) {
+    return type === 'web';
+  },
+
+  isGraphicType(type) {
+    return type === 'graphic';
+  },
+
+  isMobileType(type) {
+    return type === 'mobile';
   }
 });

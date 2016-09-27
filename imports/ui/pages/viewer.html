@@ -23,16 +23,24 @@
         <div class="col-sm-6">
           <h3>Details</h3>
 
-          <dl>
-            <dt>Date</dt>
-            <dd>{{item.date}}</dd>
+          {{#if isWebType item.type}}
+            <dl>
+              <dt>Date</dt>
+              <dd>{{item.date}}</dd>
 
-            <dt>Languages</dt>
-            <dd>{{item.languages}}</dd>
+              <dt>Languages</dt>
+              <dd>{{item.languages}}</dd>
 
-            <dt>Frameworks</dt>
-            <dd>{{item.frameworks}}</dd>
-          </dl>
+              <dt>Frameworks</dt>
+              <dd>{{item.frameworks}}</dd>
+            </dl>
+          {{/if}}
+
+          {{#if isGraphicType item.type}}
+          {{/if}}
+
+          {{#if isMobileType item.type}}
+          {{/if}}
         </div>
       </div>
     </div>

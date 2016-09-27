@@ -30,7 +30,7 @@
 
       <div class="row">
         {{#each item in portfolio}}
-          <div class="col-sm-4">
+          <div class="col-sm-4" data-type="{{item.type}}">
             <a href="/portfolio/{{renderLink item.title}}" class="portfolio-item">
               <div class="panel panel-default">
                 <div class="panel-body">
