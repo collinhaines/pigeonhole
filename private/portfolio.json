@@ -8,5 +8,15 @@
     "languages": "JavaScript, MongoDB",
     "frameworks": "Bootstrap, Meteor",
     "description": "Diving head first into more Meteor coding comes nothing more than just another admin dashboard. An admin dashboard template proposing how simplistic any team can view all important content in one location while still giving the user the option to view an item in detail; I'm not insane, I'm just a coder."
+  },
+  {
+    "url": "http://contextual.xyz",
+    "date": "August 2015 - May 2016",
+    "type": "web",
+    "title": "ConTexutal",
+    "image": "contextual.png",
+    "languages": "JavaScript, MongoDB",
+    "frameworks": "Bootstrap, Meteor",
+    "description": "Grasping the wondrous concept of the mode-neutral pedagogy, ConTextual allows their students a one-of-a-kind platform access to four areas; self-instruction, student interaction, teacher interaction, and material learning. With this execution, one can only hope that students will have an easier time grasping the subject at hand rather than memorizing it."
   }
 ]
