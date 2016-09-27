@@ -25,6 +25,11 @@
 
           {{#if isWebType item.type}}
             <dl>
+              {{#if item.url}}
+                <dt>URL</dt>
+                <dd><a href="{{item.url}}">{{item.url}}</a></dd>
+              {{/if}}
+
               <dt>Date</dt>
               <dd>{{item.date}}</dd>
 
