@@ -1,24 +1,8 @@
 [
   {
-    "url": "ravenel.cdh.sc.edu",
-    "date": "September 2014 - May 2016",
-    "title": "Henry William Ravenel",
-    "thumb": "ravenel-cdh-sc-edu-small.png",
-    "image": "ravenel-cdh-sc-edu-large.png",
-    "languages": "PHP, JavaScript, MySQL",
-    "frameworks": "ArcGIS, Bootstrap",
-    "description": "Centralized location of three databases for users to view the lifestyle of a nineteenth-century botanist.",
-    "improvement": "Established a lot of personal coding beliefs like style, indentations, and file organization."
-  },
-  {
-    "url": "contextual.xyz",
-    "date": "August 2015 - May 2016",
-    "title": "ConTextual",
-    "thumb": "contextual-xyz-small.png",
-    "image": "contextual-xyz-large.png",
-    "languages": "JavaScript",
-    "frameworks": "Bootstrap, Meteor.js",
-    "description": "Web application based on the mode neutral pedagogy.",
-    "improvement": "Introduction to the world of LEAN stack and the Meteor.js framework."
+    "url": "https://jaad.collinhaines.com",
+    "date": "September 2016 - Current",
+    "title": "JAAD",
+    "image": "jaad.png"
   }
 ]

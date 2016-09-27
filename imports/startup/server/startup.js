@@ -1,16 +1,30 @@
 import { Meteor } from 'meteor/meteor';
+
+import { Portfolio } from '/imports/api/portfolio.js';
 import { Showcase } from '/imports/api/showcase.js';
 
 Meteor.startup(function () {
-  // Insert portfolio items from the JSON file to the database on startup.
-  _.each(JSON.parse(Assets.getText('portfolio.json')), function (portfolio) {
+  // TODO: Delete this and its relatives after front-page migration.
+  _.each(JSON.parse(Assets.getText('showcase.json')), function (portfolio) {
     const item = Showcase.findOne({title: portfolio.title});
 
     if (item) {
-      updateDocument(portfolio, item);
+      updateDocument(portfolio, item, Showcase);
     } else {
       console.log('Inserting into showcase: ' + portfolio.title);
       Showcase.insert(portfolio);
+    }
+  });
+
+  // Insert portfolio items from the JSON file to the database on startup.
+  _.each(JSON.parse(Assets.getText('portfolio.json')), function (portfolio) {
+    const item = Portfolio.findOne({ title: portfolio.title });
+
+    if (item) {
+      updateDocument(portfolio, item, Portfolio);
+    } else {
+      console.log('Portfolio Insert Detected. Title: ' + portfolio.title);
+      Portfolio.insert(portfolio);
     }
   });
 });
@@ -21,8 +35,9 @@ Meteor.startup(function () {
  *
  * @param file: The local file's JSON object.
  * @param base: The database's JSON object.
+ * @param Collection: The collection being updated.
  */
-function updateDocument(file, base) {
+function updateDocument(file, base, Collection) {
   let setter = {};
 
   // Iterate through the file.
@@ -36,8 +51,10 @@ function updateDocument(file, base) {
 
   // If there's something new, update the database.
   if (Object.getOwnPropertyNames(setter).length) {
+    console.log('Collection Update Detected. Object:', setter);
+
     // Queue the database once so we don't have to download more RAM.
-    Showcase.update({
+    Collection.update({
       _id: base._id
     }, {
       $set: setter

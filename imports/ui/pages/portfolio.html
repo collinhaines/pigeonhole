@@ -27,6 +27,22 @@
           </ul>
         </div>
       </div>
+
+      <div class="row">
+        {{#each item in portfolio}}
+          <div class="col-sm-4">
+            <a href="/portfolio/{{renderLink item.title}}">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <img src="/img/portfolio-thumbs/{{item.image}}" class="img-responsive" alt="{{item.title}}">
+
+                  <p>{{item.title}}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        {{/each}}
+      </div>
     </div>
   </section>
 </template>
