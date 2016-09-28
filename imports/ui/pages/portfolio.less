@@ -42,29 +42,30 @@
       color: @text-muted;
     }
   }
+}
 
-  .portfolio-item {
-    display: block;
+// Used here and within the portfolio section of the main-page.
+.portfolio-item {
+  display: block;
+
+  .panel {
+    .transition(background-color 0.3s ease-in-out);
+  }
+
+  .portfolio-item-image {
+    .box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  .portfolio-item-title {
+    color: initial;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
 
     .panel {
-      .transition(background-color 0.3s ease-in-out);
-    }
-
-    .portfolio-item-image {
-      .box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
-    }
-
-    .portfolio-item-title {
-      color: initial;
-      margin-bottom: 0;
-    }
-
-    &:hover {
-      text-decoration: none;
-
-      .panel {
-        background-color: #ececec;
-      }
+      background-color: #ececec;
     }
   }
 }

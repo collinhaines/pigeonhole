@@ -22,8 +22,8 @@ Template.portfolio.helpers({
     });
   },
 
-  renderLink(title) {
-    return title.toLowerCase().replace(' ', '-');
+  renderLink(link) {
+    return link.toLowerCase().replace(new RegExp(' ', 'g'), '-');
   }
 });
 
