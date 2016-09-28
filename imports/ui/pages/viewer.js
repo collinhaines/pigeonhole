@@ -26,10 +26,6 @@ Template.viewer.helpers({
     return type === 'web';
   },
 
-  isGraphicType(type) {
-    return type === 'graphic';
-  },
-
   isMobileType(type) {
     return type === 'mobile';
   },
