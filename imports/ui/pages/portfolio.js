@@ -15,7 +15,11 @@ Template.portfolio.onCreated(function () {
 
 Template.portfolio.helpers({
   portfolio() {
-    return Portfolio.find();
+    return Portfolio.find({}, {
+      sort: {
+        startDate: -1
+      }
+    });
   },
 
   renderLink(title) {
