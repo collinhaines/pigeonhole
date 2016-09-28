@@ -19,7 +19,7 @@ Template.viewer.onCreated(function () {
 
 Template.viewer.helpers({
   item() {
-    return Portfolio.findOne({ title: new RegExp(FlowRouter.getParam('title'), 'i') });
+    return Portfolio.findOne({ title: new RegExp(FlowRouter.getParam('title').replace(new RegExp('-', 'g'), ' '), 'i') });
   },
 
   isWebType(type) {

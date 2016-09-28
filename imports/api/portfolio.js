@@ -12,7 +12,7 @@ if (Meteor.isServer) {
   Meteor.publish('portfolio-item', function (title) {
     check(title, String);
 
-    return Portfolio.find({ title: new RegExp(title, 'i') });
+    return Portfolio.find({ title: new RegExp(title.replace(new RegExp('-', 'g'), ' '), 'i') });
   });
 }
 
