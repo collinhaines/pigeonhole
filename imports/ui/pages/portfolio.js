@@ -17,7 +17,7 @@ Template.portfolio.helpers({
   portfolio() {
     return Portfolio.find({}, {
       sort: {
-        startDate: -1
+        endDate: -1
       }
     });
   },

@@ -4,7 +4,7 @@
     "type": "web",
     "title": "JAAD",
     "image": "jaad.png",
-    "endDate": "",
+    "endDate": "now",
     "startDate": "2016-08-30T00:00:00+00:00",
     "languages": "JavaScript, MongoDB",
     "frameworks": "Bootstrap, Meteor",

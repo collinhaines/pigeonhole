@@ -53,7 +53,7 @@ Template.viewer.helpers({
       }[date.getUTCMonth()] + ' ' + date.getUTCFullYear();
     };
 
-    return end === '' ?
+    return end === 'now' ?
       getDate(new Date(start)) + ' - Current' :
       getDate(new Date(start)) + ' - ' + getDate(new Date(end));
   }
