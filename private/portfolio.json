@@ -33,5 +33,16 @@
     "frameworks": "Bootstrap",
     "description": "You'd be surprised how much time people had on their hands before machines. Henry William Ravenel was an 18<sup>th</sup>-century botanist living in South Carolina. Utilizing text transcriptions of his personal diaries and image scans of the actual botanical collection he owned, scholars, researchers, and students can come to a centralized showcasing website.",
     "collaborators": "Surya Bhatt, Carly Keith"
+  },
+  {
+    "url": "http://lowcountrybilling.com",
+    "type": "web",
+    "title": "Lowcountry Billing",
+    "image": "lowcountrybilling.png",
+    "endDate": "2014-09-10T00:00:00+00:00",
+    "startDate": "2014-05-09T00:00:00+00:00",
+    "languages": "C#, ASP.NET, JavaScript",
+    "frameworks": "Bootstrap",
+    "description": "Lowcountry Billing is a local ambulance billing company for the South Carolina midlands. When I was hired, I was tasked to change their image-only website into something \"better\". With a few iterations, this was unveiled. During my time at Lowcountry Billing, it was here that I discovered my passion for web design and development, the worlds of frameworks and third-party libraries, and most importantly, the unique world of C# and .NET"
   }
 ]
