@@ -23,33 +23,28 @@
         <div class="col-sm-6">
           <h3>Details</h3>
 
-          {{#if isWebType item.type}}
-            <dl>
-              {{#if item.url}}
-                <dt>URL</dt>
-                <dd><a href="{{item.url}}">{{item.url}}</a></dd>
-              {{/if}}
+          <dl>
+            {{#if item.url}}
+              <dt>URL</dt>
+              <dd><a href="{{item.url}}">{{item.url}}</a></dd>
+            {{/if}}
 
-              <dt>Date</dt>
-              <dd>{{renderDate item.startDate item.endDate}}</dd>
+            <dt>Date</dt>
+            <dd>{{renderDate item.startDate item.endDate}}</dd>
 
-              <dt>Languages</dt>
-              <dd>{{item.languages}}</dd>
+            <dt>Languages</dt>
+            <dd>{{item.languages}}</dd>
 
-              {{#if item.frameworks}}
-                <dt>Frameworks</dt>
-                <dd>{{item.frameworks}}</dd>
-              {{/if}}
+            {{#if item.frameworks}}
+              <dt>Frameworks</dt>
+              <dd>{{item.frameworks}}</dd>
+            {{/if}}
 
-              {{#if item.collaborators}}
-                <dt>Collaborators</dt>
-                <dd>{{item.collaborators}}</dd>
-              {{/if}}
-            </dl>
-          {{/if}}
-
-          {{#if isOtherType item.type}}
-          {{/if}}
+            {{#if item.collaborators}}
+              <dt>Collaborators</dt>
+              <dd>{{item.collaborators}}</dd>
+            {{/if}}
+          </dl>
         </div>
       </div>
     </div>

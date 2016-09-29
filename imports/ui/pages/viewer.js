@@ -22,14 +22,6 @@ Template.viewer.helpers({
     return Portfolio.findOne({ title: new RegExp(FlowRouter.getParam('title').replace(new RegExp('-', 'g'), ' '), 'i') });
   },
 
-  isWebType(type) {
-    return type === 'web';
-  },
-
-  isOtherType(type) {
-    return type === 'other';
-  },
-
   renderDate(start, end) {
     const getDate = (date) => {
       // This statement is disgusting to look at.

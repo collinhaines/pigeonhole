@@ -63,5 +63,14 @@
     "startDate": "2010-07-01T00:00:00+00:00",
     "languages": "JavaScript",
     "description": "In the summer of 2009, I was accepted into the Order of the Arrow for Santee Lodge 116. The following year I accepted the position of Editor. The Editor's task is to assure that periodically newsletters are sent out amongst the members and to update the website accordingly. Being as this was my first ever website, looking back, it was rather nasty code and concepts, but it won two awards!"
+  },
+  {
+    "type": "other",
+    "title": "PokeBundle",
+    "image": "pokebundle.png",
+    "endDate": "2015-08-01T00:00:00+00:00",
+    "startDate": "2013-11-01T00:00:00+00:00",
+    "languages": "Objective-C",
+    "description": "In the fall semester of 2013, I was really interested in creating an iOS application. Within six months, at 19 years-old, I had one completed revolving around one of my favorite games. PokeBundle's purpose is to allow competitive Pokémon players the ability to determine how strong their Pokémon are by their hidden stats, Individual Values."
   }
 ]
