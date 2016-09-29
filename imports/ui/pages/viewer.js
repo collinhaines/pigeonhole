@@ -26,8 +26,8 @@ Template.viewer.helpers({
     return type === 'web';
   },
 
-  isMobileType(type) {
-    return type === 'mobile';
+  isOtherType(type) {
+    return type === 'other';
   },
 
   renderDate(start, end) {
