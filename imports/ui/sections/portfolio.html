@@ -1,60 +1,28 @@
-<template name="portfolio">
+<template name="portfolioSection">
   <section class="portfolio" id="portfolio">
     <div class="container">
       <div class="row text-center header">
         <div class="col-xs-12">
-          <h2>Works: New and Old</h2>
+          <h2>Works: Proud and Ashamed</h2>
         </div>
       </div>
 
       <div class="row">
-        <div class="portfolio-overview-row animated clearfix" style="display: block;">
-          {{#each items}}
-            <div class="col-sm-6 portfolio-item-preview" data-id="{{_id}}">
-              <img src="/img/{{thumb}}" class="img-responsive" alt="{{title}}">
+        {{#each item in portfolio}}
+          <div class="col-sm-6">
+            <a href="/portfolio/{{renderLink item.title}}" class="portfolio-item">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <img src="/img/portfolio-images/{{item.image}}" class="img-responsive portfolio-item-image" alt="{{item.title}}">
 
-              <div class="col-xs-12">
-                <p>{{title}}</p>
+                  <h4 class="portfolio-item-title">{{item.title}}</h4>
+                </div>
               </div>
-            </div>
-          {{/each}}
-        </div>
-
-        <div class="portfolio-detailed-row animated clearfix" style="display: none;">
-          <div class="col-sm-5 portfolio-item-image">
-            <img src="" class="img-responsive" alt="">
+            </a>
           </div>
+        {{/each}}
 
-          <div class="col-sm-7 portfolio-item-details">
-            <h4></h4>
-
-            <dl class="dl-horizontal">
-              <dt>Description</dt>
-              <dd id="portfolio-detailed-description"></dd>
-
-              <dt>Self-Improvement</dt>
-              <dd id="portfolio-detailed-improvement"></dd>
-
-              <dt>Date</dt>
-              <dd id="portfolio-detailed-date"></dd>
-
-              <dt>Languages</dt>
-              <dd id="portfolio-detailed-languages"></dd>
-
-              <dt>Frameworks</dt>
-              <dd id="portfolio-detailed-frameworks"></dd>
-
-              <dt>URL</dt>
-              <dd id="portfolio-detailed-url">
-                <a href="#"></a>
-              </dd>
-            </dl>
-
-            <button type="button" class="btn btn-sm btn-default center-block">
-              <i class="fa fa-arrow-left"></i> Go back
-            </button>
-          </div>
-        </div>
+        <p class="text-center" style="margin-top: 25px;"><a href="/portfolio">View Full Portfolio</a></p>
       </div>
     </div>
   </section>

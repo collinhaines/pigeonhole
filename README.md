@@ -11,4 +11,5 @@ A portfolio website built with Meteor.
 * Meteor
 * Unsplash:
   * [Home Splash Background Image - Jeff Sheldon](https://unsplash.com/photos/9dI3g8owHiI)
+  * [Portfolio Splash Background Image - Luis Llerena](https://unsplash.com/photos/6cOUbEdwG24)
   * [Resume Splash Background Image - Luis Llerena](https://unsplash.com/photos/6g0KJWnBhxg)

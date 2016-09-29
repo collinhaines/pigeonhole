@@ -1,0 +1,71 @@
+//
+// Portfolio
+// --------------------------------------------------
+
+// Splash section
+.portfolio-main {
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+  border-bottom: 1px solid #000;
+
+  @media (min-width: @screen-sm-min) {
+    background-size: cover;
+    background-image: url(/img/splash-backgrounds/portfolio.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+// Content section
+.portfolio-content {
+  padding-top: 75px;
+  padding-bottom: 50px;
+
+  .list-filter {
+    font-size: 18px;
+    margin-bottom: 30px;
+
+    li {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    a,
+    a:focus,
+    a:hover,
+    a:active {
+      color: #000;
+    }
+
+    a.current {
+      color: @text-muted;
+    }
+  }
+}
+
+// Used here and within the portfolio section of the main-page.
+.portfolio-item {
+  display: block;
+
+  .panel {
+    .transition(background-color 0.3s ease-in-out);
+  }
+
+  .portfolio-item-image {
+    .box-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  .portfolio-item-title {
+    color: initial;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .panel {
+      background-color: #ececec;
+    }
+  }
+}

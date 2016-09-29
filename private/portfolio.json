@@ -1,24 +1,76 @@
 [
   {
-    "url": "ravenel.cdh.sc.edu",
-    "date": "September 2014 - May 2016",
-    "title": "Henry William Ravenel",
-    "thumb": "ravenel-cdh-sc-edu-small.png",
-    "image": "ravenel-cdh-sc-edu-large.png",
-    "languages": "PHP, JavaScript, MySQL",
-    "frameworks": "ArcGIS, Bootstrap",
-    "description": "Centralized location of three databases for users to view the lifestyle of a nineteenth-century botanist.",
-    "improvement": "Established a lot of personal coding beliefs like style, indentations, and file organization."
+    "url": "https://jaad.collinhaines.com",
+    "type": "web",
+    "title": "JAAD",
+    "image": "jaad.png",
+    "endDate": "now",
+    "startDate": "2016-08-30T00:00:00+00:00",
+    "languages": "JavaScript, MongoDB",
+    "frameworks": "Bootstrap, Meteor",
+    "description": "Diving head first into more Meteor coding comes nothing more than just another admin dashboard. An admin dashboard template proposing how simplistic any team can view all important content in one location while still giving the user the option to view an item in detail; I'm not insane, I'm just a coder."
   },
   {
-    "url": "contextual.xyz",
-    "date": "August 2015 - May 2016",
-    "title": "ConTextual",
-    "thumb": "contextual-xyz-small.png",
-    "image": "contextual-xyz-large.png",
+    "url": "http://contextual.xyz",
+    "type": "web",
+    "title": "ConTexutal",
+    "image": "contextual.png",
+    "endDate": "2016-05-06T00:00:00+00:00",
+    "startDate": "2015-08-20T00:00:00+00:00",
+    "languages": "JavaScript, MongoDB",
+    "frameworks": "Bootstrap, Meteor",
+    "description": "Grasping the wondrous concept of the mode-neutral pedagogy, ConTextual allows their students a one-of-a-kind platform access to four areas; self-instruction, student interaction, teacher interaction, and material learning. With this execution, one can only hope that students will have an easier time grasping the subject at hand rather than memorizing it.",
+    "collaborators": "Kat Galang, Scott Hosley, Chris Ostrander"
+  },
+  {
+    "url": "http://ravenel.cdh.sc.edu",
+    "type": "web",
+    "title": "Plants and Planter",
+    "image": "ravenel.png",
+    "endDate": "2016-04-29T00:00:00+00:00",
+    "startDate": "2014-09-16T00:00:00+00:00",
+    "languages": "PHP, JavaScript, MySQL",
+    "frameworks": "Bootstrap",
+    "description": "You'd be surprised how much time people had on their hands before machines. Henry William Ravenel was an 18<sup>th</sup>-century botanist living in South Carolina. Utilizing text transcriptions of his personal diaries and image scans of the actual botanical collection he owned, scholars, researchers, and students can come to a centralized showcasing website.",
+    "collaborators": "Surya Bhatt, Carly Keith"
+  },
+  {
+    "url": "http://lowcountrybilling.com",
+    "type": "web",
+    "title": "Lowcountry Billing",
+    "image": "lowcountrybilling.png",
+    "endDate": "2014-09-10T00:00:00+00:00",
+    "startDate": "2014-05-09T00:00:00+00:00",
+    "languages": "C#, ASP.NET, JavaScript",
+    "frameworks": "Bootstrap",
+    "description": "Lowcountry Billing is a local ambulance billing company for the South Carolina midlands. When I was hired, I was tasked to change their image-only website into something \"better\". With a few iterations, this was unveiled. During my time at Lowcountry Billing, it was here that I discovered my passion for web design and development, the worlds of frameworks and third-party libraries, and most importantly, the unique world of C# and .NET"
+  },
+  {
+    "type": "web",
+    "title": "AALMO",
+    "image": "aalmo.png",
+    "endDate": "2012-06-01T00:00:00+00:00",
+    "startDate": "2011-08-01T00:00:00+00:00",
+    "languages": "PHP",
+    "frameworks": "WordPress",
+    "description": "Serving as my senior project in high school, the Academy's Art and Literary Magazine Online showcases student-only work. From poems, and photos of artistic creations, to unique graphic design concepts and one-of-a-kind videos, the AALMO was a tradition at AAST, and it was my job to maintain the website. During my time, I also adjusted non-WordPress page to mirror the WordPress theme."
+  },
+  {
+    "type": "web",
+    "title": "Santee Lodge",
+    "image": "santeelodge.png",
+    "endDate": "2011-07-01T00:00:00+00:00",
+    "startDate": "2010-07-01T00:00:00+00:00",
     "languages": "JavaScript",
-    "frameworks": "Bootstrap, Meteor.js",
-    "description": "Web application based on the mode neutral pedagogy.",
-    "improvement": "Introduction to the world of LEAN stack and the Meteor.js framework."
+    "description": "In the summer of 2009, I was accepted into the Order of the Arrow for Santee Lodge 116. The following year I accepted the position of Editor. The Editor's task is to assure that periodically newsletters are sent out amongst the members and to update the website accordingly. Being as this was my first ever website, looking back, it was rather nasty code and concepts, but it won two awards!"
+  },
+  {
+    "type": "other",
+    "title": "PokeBundle",
+    "image": "pokebundle.png",
+    "endDate": "2015-08-01T00:00:00+00:00",
+    "startDate": "2013-11-01T00:00:00+00:00",
+    "languages": "Objective-C",
+    "description": "In the fall semester of 2013, I was really interested in creating an iOS application. Within six months, at 19 years-old, I had one completed revolving around one of my favorite games. PokeBundle's purpose is to allow competitive Pokémon players the ability to determine how strong their Pokémon are by their hidden stats, Individual Values."
   }
 ]

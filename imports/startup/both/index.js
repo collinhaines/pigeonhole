@@ -1,1 +1,1 @@
-import '/imports/api/showcase.js';
+import '/imports/api/portfolio.js';

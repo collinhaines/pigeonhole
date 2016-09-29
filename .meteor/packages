@@ -23,7 +23,6 @@ shell-server@0.2.1              # Server-side component of the `meteor shell` co
 
 kadira:blaze-layout             # Layout Manager for Blaze (works well with FlowRouter)
 kadira:flow-router              # Carefully Designed Client Side Router for Meteor
-natestrauser:animate-css        # Animate.css packaged for meteor
 practicalmeteor:mocha           # Write package tests with mocha and run them in the browser or from the command line with spacejam.
 dispatch:mocha-phantomjs        # Run package or app tests with Mocha+PhantomJS and report all results in the server console
 natestrauser:font-awesome       # Latest version Font-Awesome loaded via CDN

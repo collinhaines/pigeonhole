@@ -1,0 +1,52 @@
+<template name="viewer">
+  <section class="viewer-main">
+    <div class="background-image" style="background-image: url(/img/portfolio-images/{{item.image}})"></div>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-5 col-sm-10 col-xs-11 center-block splash-text">
+          <h1>{{item.title}}</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="viewer-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h3>Description</h3>
+
+          <p class="text-justify">{{{item.description}}}</p>
+        </div>
+
+        <div class="col-sm-6">
+          <h3>Details</h3>
+
+          <dl>
+            {{#if item.url}}
+              <dt>URL</dt>
+              <dd><a href="{{item.url}}">{{item.url}}</a></dd>
+            {{/if}}
+
+            <dt>Date</dt>
+            <dd>{{renderDate item.startDate item.endDate}}</dd>
+
+            <dt>Languages</dt>
+            <dd>{{item.languages}}</dd>
+
+            {{#if item.frameworks}}
+              <dt>Frameworks</dt>
+              <dd>{{item.frameworks}}</dd>
+            {{/if}}
+
+            {{#if item.collaborators}}
+              <dt>Collaborators</dt>
+              <dd>{{item.collaborators}}</dd>
+            {{/if}}
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

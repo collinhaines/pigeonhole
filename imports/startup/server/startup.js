@@ -1,16 +1,18 @@
 import { Meteor } from 'meteor/meteor';
-import { Showcase } from '/imports/api/showcase.js';
+import { _ } from 'meteor/underscore';
+
+import { Portfolio } from '/imports/api/portfolio.js';
 
 Meteor.startup(function () {
   // Insert portfolio items from the JSON file to the database on startup.
   _.each(JSON.parse(Assets.getText('portfolio.json')), function (portfolio) {
-    const item = Showcase.findOne({title: portfolio.title});
+    const item = Portfolio.findOne({ title: portfolio.title });
 
     if (item) {
       updateDocument(portfolio, item);
     } else {
-      console.log('Inserting into showcase: ' + portfolio.title);
-      Showcase.insert(portfolio);
+      console.log('Portfolio Insert Detected. Title: ' + portfolio.title);
+      Portfolio.insert(portfolio);
     }
   });
 });
@@ -36,8 +38,10 @@ function updateDocument(file, base) {
 
   // If there's something new, update the database.
   if (Object.getOwnPropertyNames(setter).length) {
+    console.log('Portfolio Update Detected. Object:', setter);
+
     // Queue the database once so we don't have to download more RAM.
-    Showcase.update({
+    Portfolio.update({
       _id: base._id
     }, {
       $set: setter

@@ -1,0 +1,45 @@
+<template name="portfolio">
+  <section class="portfolio-main">
+    <div class="container text-center">
+      <div class="col-md-5 col-sm-10 col-xs-11 center-block splash-text">
+        <h1>Portfolio</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="list-inline list-filter text-center" id="filter">
+            <li>
+              <a href="#" data-filter="all" class="current">All</a>
+            </li>
+            <li>
+              <a href="#" data-filter="web">Web</a>
+            </li>
+            <li>
+              <a href="#" data-filter="other">Other</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        {{#each item in portfolio}}
+          <div class="col-sm-4" data-type="{{item.type}}">
+            <a href="/portfolio/{{renderLink item.title}}" class="portfolio-item">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <img src="/img/portfolio-images/{{item.image}}" class="img-responsive portfolio-item-image" alt="{{item.title}}">
+
+                  <h4 class="portfolio-item-title">{{item.title}}</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+</template>
