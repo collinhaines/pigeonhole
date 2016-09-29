@@ -36,8 +36,10 @@
               <dt>Languages</dt>
               <dd>{{item.languages}}</dd>
 
-              <dt>Frameworks</dt>
-              <dd>{{item.frameworks}}</dd>
+              {{#if item.frameworks}}
+                <dt>Frameworks</dt>
+                <dd>{{item.frameworks}}</dd>
+              {{/if}}
 
               {{#if item.collaborators}}
                 <dt>Collaborators</dt>

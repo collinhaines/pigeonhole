@@ -54,5 +54,14 @@
     "languages": "PHP",
     "frameworks": "WordPress",
     "description": "Serving as my senior project in high school, the Academy's Art and Literary Magazine Online showcases student-only work. From poems, and photos of artistic creations, to unique graphic design concepts and one-of-a-kind videos, the AALMO was a tradition at AAST, and it was my job to maintain the website. During my time, I also adjusted non-WordPress page to mirror the WordPress theme."
+  },
+  {
+    "type": "web",
+    "title": "Santee Lodge",
+    "image": "santeelodge.png",
+    "endDate": "2011-07-01T00:00:00+00:00",
+    "startDate": "2010-07-01T00:00:00+00:00",
+    "languages": "JavaScript",
+    "description": "In the summer of 2009, I was accepted into the Order of the Arrow for Santee Lodge 116. The following year I accepted the position of Editor. The Editor's task is to assure that periodically newsletters are sent out amongst the members and to update the website accordingly. Being as this was my first ever website, looking back, it was rather nasty code and concepts, but it won two awards!"
   }
 ]
