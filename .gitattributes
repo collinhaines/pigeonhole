@@ -1,3 +1,2 @@
-imports/ui/library/*.js                    linguist-vendored
-imports/ui/stylesheets/bootstrap/**/.less  linguist-vendored
-imports/ui/stylesheets/bootswatch/*.less   linguist-vendored
+imports/ui/library/      linguist-vendored
+imports/ui/stylesheets/  linguist-vendored
