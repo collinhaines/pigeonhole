@@ -6,19 +6,19 @@
 
 meteor-base@1.0.4               # Packages every Meteor app needs to have
 mobile-experience@1.0.4         # Packages for a great mobile UX
-mongo@1.1.12                    # The database Meteor supports right now
+mongo@1.1.12_1                  # The database Meteor supports right now
 blaze-html-templates@1.0.4      # Compile .html files into Meteor Blaze views
 session@1.1.6                   # Client-side reactive dictionary for your app
 jquery@1.11.9                   # Helpful client-side library
 tracker@1.1.0                   # Meteor's client-side reactive programming library
 
-es5-shim@4.6.14                 # ECMAScript 5 compatibility for older browsers
-ecmascript@0.5.8                # Enable ECMAScript2015+ syntax in app code
-less@2.7.5                      # Leaner CSS language
-http@1.2.9                      # Make HTTP calls to remove servers
-email@1.1.17                    # Send email messages
-standard-minifier-css@1.2.0     # Standard CSS minifier used with Meteor apps by default
-standard-minifier-js@1.2.0      # Standard JavaScript minifiers used with Meteor apps by default
+es5-shim@4.6.14_1               # ECMAScript 5 compatibility for older browsers
+ecmascript@0.5.8_1              # Enable ECMAScript2015+ syntax in app code
+less@2.7.5_1                    # Leaner CSS language
+http@1.2.9_1                    # Make HTTP calls to remove servers
+email@1.1.17_1                  # Send email messages
+standard-minifier-css@1.2.0_1   # Standard CSS minifier used with Meteor apps by default
+standard-minifier-js@1.2.0_1    # Standard JavaScript minifiers used with Meteor apps by default
 shell-server@0.2.1              # Server-side component of the `meteor shell` command.
 
 kadira:blaze-layout             # Layout Manager for Blaze (works well with FlowRouter)
