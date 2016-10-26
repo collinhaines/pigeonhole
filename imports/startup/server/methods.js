@@ -3,7 +3,9 @@ import { Email } from 'meteor/email';
 import { HTTP } from 'meteor/http';
 
 Meteor.methods({
-  contact: function (data) {
+  contact(data) {
+    this.unblock();
+
     // Validate name.
     if (data.name.trim() === '') {
       throw new Meteor.Error('#name', 'Please fill out the name field.');
@@ -59,13 +61,11 @@ Meteor.methods({
       }
     }
 
-    this.unblock();
-
     Email.send({
       to:      'collinhaines@me.com',
       from:    data.name + ' <' + data.email + '>',
-      subject: 'Contact Form Submission',
-      text:    data.message
+      text:    data.message,
+      subject: 'Contact Form Submission'
     });
 
     return 'Thank you ' + data.name.trim() + ', your message has been sent!';

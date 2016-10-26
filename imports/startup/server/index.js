@@ -2,4 +2,4 @@
 import './startup.js';
 
 // All API calls from the client.
-import './api.js';
+import './methods.js';
