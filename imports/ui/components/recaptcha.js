@@ -1,8 +1,8 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
-import { $ } from 'meteor/jquery';
-
 import './recaptcha.html';
+
+import { Template } from 'meteor/templating';
+import { Meteor } from 'meteor/meteor';
+import { $ } from 'meteor/jquery';
 
 Template.reCAPTCHA.onCreated(function () {
   $.getScript('https://www.google.com/recaptcha/api.js');

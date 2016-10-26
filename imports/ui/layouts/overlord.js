@@ -5,7 +5,7 @@ import { Template } from 'meteor/templating';
 import { Tracker } from 'meteor/tracker';
 
 Template.overlord.onCreated(function () {
-  Tracker.autorun(function () {
+  Tracker.autorun(() => {
     FlowRouter.watchPathChange();
 
     // Detects if the window is scrolled down on a page,

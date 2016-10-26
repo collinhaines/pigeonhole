@@ -1,7 +1,7 @@
 import './main-page.html';
 
-import '../sections/splash.js';
-import '../sections/services.js';
-import '../sections/about.js';
-import '../sections/portfolio.js';
-import '../sections/contact.js';
+import '/imports/ui/sections/splash.js';
+import '/imports/ui/sections/services.js';
+import '/imports/ui/sections/about.js';
+import '/imports/ui/sections/portfolio.js';
+import '/imports/ui/sections/contact.js';
