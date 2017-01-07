@@ -40,9 +40,26 @@
 
   // Material Floating Label
   // Credit: http://jsfiddle.net/RyanWalters/z9ymd852/
-
   .form-group {
     position: relative;
+
+    &.focused,
+    &.has-text {
+      .control-label {
+        .opacity(1);
+        .scale(0.75);
+      }
+
+      .character-count {
+        .opacity(1);
+      }
+    }
+
+    &.focused {
+      .form-control::-webkit-input-placeholder {
+        color: #bbb;
+      }
+    }
   }
 
   .control-label {
@@ -61,31 +78,17 @@
     .transition-duration(240ms);
   }
 
-  .form-group.focused .control-label,
-  .form-group.has-text .control-label {
-    .opacity(1);
-    .scale(0.75);
-  }
-
-  .form-group.focused .character-count,
-  .form-group.has-text .character-count {
-    .opacity(1);
-  }
-
   .form-control {
     margin-bottom: 25px;
-  }
 
-  .form-control::-webkit-input-placeholder {
-    color: transparent;
-    .transition-duration(240ms);
-  }
+    &::-webkit-input-placeholder {
+      color: transparent;
 
-  .form-control:focus::-webkit-input-placeholder {
-    .transition(none);
-  }
+      .transition-duration(240ms);
+    }
 
-  .form-group.focused .form-control::-webkit-input-placeholder {
-    color: #BBBBBB;
+    &:focus::-webkit-input-placeholder {
+      .transition(none);
+    }
   }
 }

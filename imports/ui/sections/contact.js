@@ -1,13 +1,18 @@
-import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { Meteor } from 'meteor/meteor';
 import { $ } from 'meteor/jquery';
 
 import './contact.html';
 
-import '../components/recaptcha.js';
+import '/imports/ui/components/recaptcha.js';
 
-Template.contact.onCreated(function contactCreated() {
-  this.alertError = (element, text) => {
+Template.contact.onCreated(function () {
+  this.renderAlert = (element, text) => {
+    // Create the `<p>` element if necessary.
+    if ($('#contact .alert p').length === 0) {
+      $('#contact .alert').append('<p></p>');
+    }
+
     // Render the alert and its text.
     $('#contact .alert')
       .removeClass('alert-success alert-danger alert-info')
@@ -16,7 +21,7 @@ Template.contact.onCreated(function contactCreated() {
       .text(text);
 
     // Remove any other warnings.
-    $('#contact .form-group').removeClass('has-warning');
+    $('#contact .has-warning').removeClass('has-warning');
 
     // Add the current field warning.
     $('#contact ' + element)
@@ -33,12 +38,18 @@ Template.contact.onCreated(function contactCreated() {
 Template.contact.events({
   // Toggle material floating label.
   'focus .form-control, blur .form-control'(event) {
-    $(event.target).parents('.form-group').toggleClass('focused');
+    $(event.target)
+      .parents('.form-group')
+      .toggleClass('focused');
   },
 
   // Update character count.
   'keyup .form-control'(event) {
-    $(event.target).parent().addClass('has-text').find('span').text(event.target.value.trim().length + ' / ' + $(event.target).attr('maxlength'));
+    $(event.target)
+      .parent()
+      .addClass('has-text')
+      .find('span')
+      .text(event.target.value.trim().length + ' / ' + $(event.target).attr('maxlength'));
 
     if (event.target.value.trim() === '') {
       $(event.target).parent().removeClass('has-text');
@@ -47,66 +58,55 @@ Template.contact.events({
 
   // Close an alert.
   'click .alert .close'(event) {
-    $(event.target).parent().removeClass('is-visible');
+    $(event.target)
+      .parent()
+      .removeClass('is-visible');
   },
 
   // User has submitted a form - send to server.
   'submit #contact form'(event, instance) {
+    let captcha;
+
     const name    = $('#contact #name').val().trim();
     const email   = $('#contact #email').val().trim();
     const message = $('#contact #message').val().trim();
-    let captcha;
 
     // Validate name.
     if (name === '') {
-      instance.alertError('#name', 'Please fill out the name field.');
-
-      event.preventDefault();
+      instance.renderAlert('#name', 'Please fill out the name field.');
 
       return false;
     } else if (name.length > 50) {
-      instance.alertError('#name', 'Please do not exceed 50 characters for the name field.');
-
-      event.preventDefault();
+      instance.renderAlert('#name', 'Please do not exceed 50 characters for the name field.');
 
       return false;
     }
 
     // Validate email.
     if (email === '') {
-      instance.alertError('#email', 'Please fill out the email field.');
-
-      event.preventDefault();
+      instance.renderAlert('#email', 'Please fill out the email field.');
 
       return false;
     } else if (email.length > 100) {
-      instance.alertError('#email', 'Please do not exceed 100 characters for the email field.');
-
-      event.preventDefault();
+      instance.renderAlert('#email', 'Please do not exceed 100 characters for the email field.');
 
       return false;
     }
 
     // Validate message.
     if (message === '') {
-      instance.alertError('#message', 'Please fill out the message field.');
-
-      event.preventDefault();
+      instance.renderAlert('#message', 'Please fill out the message field.');
 
       return false;
     } else if (message.length > 500) {
-      instance.alertError('#message', 'Please do not exceed 500 characters for the message field.');
-
-      event.preventDefault();
+      instance.renderAlert('#message', 'Please do not exceed 500 characters for the message field.');
 
       return false;
     }
 
     // Validate reCAPTCHA.
     if (captcha === '') {
-      instance.alertError('#this-is-nothing', 'Please complete the CAPTCHA.');
-
-      event.preventDefault();
+      instance.renderAlert('#this-is-nothing', 'Please complete the CAPTCHA.');
 
       return false;
     }
@@ -123,7 +123,7 @@ Template.contact.events({
       }
 
       if (error) {
-        instance.alertError(error.error, error.reason);
+        instance.renderAlert(error.error, error.reason);
 
         return;
       }

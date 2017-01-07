@@ -4,6 +4,10 @@ import { HTTP } from 'meteor/http';
 
 Meteor.methods({
   contact(data) {
+    let response;
+
+    const parameters = 'secret=' + Meteor.settings.private.captchaKey + '&remoteip=' + this.connection.clientAddress + '&response=' + data.captcha;
+
     this.unblock();
 
     // Validate name.
@@ -31,9 +35,6 @@ Meteor.methods({
     if (data.captcha.trim() === '') {
       throw new Meteor.Error('#this-is-nothing', 'Please complete the CAPTCHA.');
     }
-
-    let response;
-    const parameters = 'secret=' + Meteor.settings.private.captchaKey + '&remoteip=' + this.connection.clientAddress + '&response=' + data.captcha;
 
     try {
       response = HTTP.call('post', 'https://www.google.com/recaptcha/api/siteverify', {
