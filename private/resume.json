@@ -1,0 +1,35 @@
+[
+  {
+    "type": "education",
+    "title": "University of South Carolina",
+    "major": "Bachelor of Science",
+    "endDate": "2016-12-12T00:00:00+00:00",
+    "location": "Columbia, SC",
+    "startDate": "2012-08-23T00:00:00+00:00",
+    "description": "Attending the University of South Carolina is arguably the best decision of my high school career. In December 2016, I graduated USC with a Bachelor of Science in Computer Information Systems and a minor in Business Information Management. During my four and a half years here, I received experience with eight new coding languages, emulating operating systems, emulating cryptographic systems, and the exposure of an entrepreneurship mindset."
+  }, {
+    "type": "experience",
+    "title": "Center for Digital Humanities",
+    "endDate": "2016-12-15T00:00:00+00:00",
+    "location": "Columbia, SC",
+    "position": "Web Developer",
+    "startDate": "2014-09-09T00:00:00+00:00",
+    "description": "The Center for Digital Humanities is responsible for administering the completion of digitalizing and preserving pre-information era artifacts. When I was hired, I was tasked to administer the development of a website that revolves around an 18th-century botanist, his diary, and the specimens he collected during his lifetime. During and after the completion of that project, my tasks included design and development of eight more projects."
+  }, {
+    "type": "experience",
+    "title": "MetLife",
+    "endDate": "2016-08-12T00:00:00+00:00",
+    "location": "Greenville, SC",
+    "position": "Intern",
+    "startDate": "2016-06-06T00:00:00+00:00",
+    "description": "Working for MetLife was the first step into the wonders of the American corporate world. Having only worked for a localized and non-profit business, this change came with many new experiences. During my 10 weeks, I migrated a prominent application for the dental sub-business from utilizing a manual tool-stack of Ant, StarTeam, and BuildForge to a more autonomous tool-stack of Maven, BitBucket, and Bamboo."
+  }, {
+    "type": "experience",
+    "title": "Lowcountry Billing",
+    "endDate": "2014-05-01T00:00:00+00:00",
+    "location": "Lexington, SC",
+    "position": "Web Developer",
+    "startDate": "2014-09-05T00:00:00+00:00",
+    "description": "Lowcountry Billing brought me into their doors with hopes of teaching how IT businesses work. Not only did I get a unique insight into constructing network infrastructure for a new office, I also managed to move their website from an image-only page to an engaging business-card website. During the website reconstruction, it was here that I felt a passion for web development."
+  }
+]

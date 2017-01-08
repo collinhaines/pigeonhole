@@ -16,33 +16,15 @@
           <div class="spacer"></div>
 
           <div class="row">
-            <div class="col-sm-6">
-              <h4>University of South Carolina</h4>
+            {{#each item in education}}
+              <div class="col-sm-6">
+                <h4>{{item.title}}</h4>
 
-              <p>Bachelor of Science - <strong>Graduated</strong>: 2016</p>
+                <p>{{item.major}} - <strong>Graduated</strong>: {{renderYear item.endDate}}</p>
 
-              <p class="text-justify">Attending the University of South Carolina is arguably the best decision of my high school career. In December 2016, I will have graduated USC with a Bachelor of Science in Computer Information Systems and a minor in Business Information Management. During my four and a half years here, I had experience with eight new coding languages, emulating operating systems and cryptographic systems, and the exposure of an entrepreneurship mindset.</p>
-              <!--
-                Taught:
-                1. Java  (CSCE 145, CSCE 146)
-                2. C++   (CSCE 240) [Pointers everywhere]
-                3. ASM   (CSCE 210) [Why was this legal?]
-                4. COBOL (CSCE 205) [I love Latin]
-                5. SQL   (CSCE 520)
-
-                Self-Taught:
-                6. Objective-C (2013-2015)
-                7. C#          (2014)
-                8. PHP         (2014-2016)
-
-                Overall Experience:
-                - Introduction of eight new coding languages  (See Above)
-                - Emulate Operating Systems                   (CSCE 311)
-                - Emulate Cryptographic Systems               (CSCE 557)
-                - Team-based development of year-long project (CSCE 490, CSCE 492)
-                - Exposing the entrepreneurship mindset       (MGMT 471)
-              -->
-            </div>
+                <p class="text-justify">{{{item.description}}}</p>
+              </div>
+            {{/each}}
           </div>
         </div>
       </div>
@@ -62,13 +44,9 @@
               <h4>Programming Languages</h4>
 
               <ul class="list-unstyled">
-                <li>JavaScript</li>
-                <li>PHP</li>
-                <li>Java</li>
-
-                <li class="text-muted">Objective-C</li>
-                <li class="text-muted">C++</li>
-                <li class="text-muted">COBOL</li>
+                {{#each item in languages}}
+                  <li>{{item.name}} <small class="text-muted">({{item.date}})</small></li>
+                {{/each}}
               </ul>
             </div>
 
@@ -78,6 +56,7 @@
               <ul class="list-unstyled">
                 <li>MongoDB</li>
                 <li>MySQL</li>
+                <li>PostgreSQL</li>
               </ul>
             </div>
 
@@ -88,9 +67,7 @@
                 <li>Bootstrap</li>
                 <li>jQuery</li>
                 <li>Meteor</li>
-
-                <li class="text-muted">Angular</li>
-                <li class="text-muted">Node.js</li>
+                <li>Node.js</li>
               </ul>
             </div>
           </article>
@@ -108,45 +85,15 @@
           <div class="spacer"></div>
 
           <article class="row">
-            <div class="col-sm-4">
-              <h4>Center for Digital Humanities</h4>
+            {{#each item in experience}}
+              <div class="col-sm-4">
+                <h4>{{item.title}}</h4>
 
-              <p>Web Developer / Columbia, SC / September 2014 - Current</p>
+                <p>{{item.position}} / {{item.location}} / {{renderDate item.startDate}} - {{renderDate item.endDate}}</p>
 
-              <p class="text-justify">The Center for Digital Humanities is responsible for administering the completion of digitalizing and preserving pre-information era artifacts. When I was hired, I was tasked to administer the development of a website that revolves around an 18<sup>th</sup>-century botanist, his diary, and the specimens he collected during his lifetime. During and after the completion of that project, my tasks included design and development of eight more projects.</p>
-              <!--
-                Lead Developer:
-                1. Plants and Planter: Henry William Ravenel
-                2. NARSC
-                3. Digital United States South
-                4. Gavin Turnbull Online
-                5. Historic Southern Naturalists
-
-                Front-end Developer:
-                6. Paragon
-                7. Handheld Art
-
-                Maintenance Calls:
-                8. ManuscriptLink
-                9. Database of Classical Scholars
-              -->
-            </div>
-
-            <div class="col-sm-4">
-              <h4>MetLife</h4>
-
-              <p>Intern / Greenville, SC / June 2016 - August 2016</p>
-
-              <p class="text-justify">Working for MetLife was the first step into the wonders of the American corporate world. Having only worked for a localized and non-profit business, this change came with many new experiences. During my 10 weeks, I migrated a prominent application for the dental sub-business from utilizing a manual tool-stack of Ant, StarTeam, and BuildForge to a more autonomous tool-stack of Maven, BitBucket, and Bamboo.</p>
-            </div>
-
-            <div class="col-sm-4">
-              <h4>Lowcountry Billing</h4>
-
-              <p>Web Developer / Lexington, SC / May 2014 - September 2014</p>
-
-              <p class="text-justify">Lowcountry Billing brought me into their doors with hopes of teaching how IT businesses work. Not only did I get a unique insight into constructing network infrastructure for a new office, I also managed to move their website from an image-only page to an engaging business-card website. During the website reconstruction, it was here that I felt a passion for web development.</p>
-            </div>
+                <p class="text-justify">{{{item.description}}}</p>
+              </div>
+            {{/each}}
           </article>
         </div>
       </div>
@@ -162,35 +109,19 @@
           <div class="spacer"></div>
 
           <div class="row">
-            <div class="col-sm-4">
-              <h3>JAAD</h3>
+            {{#each item in projects}}
+              <div class="col-sm-4">
+                <h3>{{item.title}}</h3>
 
-              <p>Full-stack Template / JavaScript / September 2016 - Current</p>
+                <p>{{item.category}} / {{renderLanguage item.languages}} / {{renderDate item.startDate}} - {{renderDate item.endDate}}</p>
 
-              <p><a href="https://jaad.collinhaines.com">https://jaad.collinhaines.com</a></p>
+                <p>
+                  <a href="{{item.url}}">{{item.url}}</a>
+                </p>
 
-              <p class="text-justify">Diving head first into more Meteor coding comes nothing more than just another admin dashboard. An admin dashboard template proposing how simplistic any team can view all important content in one location while still giving the user the option to view an item in detail; I'm not insane, I'm just a coder. <em>Purchasing link coming soon.</em></p>
-            </div>
-
-            <div class="col-sm-4">
-              <h3>ConTextual</h3>
-
-              <p>Web Application / JavaScript / August 2015 - May 2016</p>
-
-              <p><a href="http://contextual.xyz">http://contextual.xyz</a></p>
-
-              <p class="text-justify">Grasping the wondrous concept of the mode-neutral pedagogy, ConTextual allows their students a one-of-a-kind platform access to four areas; self-instruction, student interaction, teacher interaction, and material learning. With this execution, one can only hope that students will have an easier time grasping the subject at hand rather than memorizing it.</p>
-            </div>
-
-            <div class="col-sm-4">
-              <h3>Plants and Planter</h3>
-
-              <p>Website / PHP / September 2014 - April 2016</p>
-
-              <p><a href="http://ravenel.cdh.sc.edu">http://ravenel.cdh.sc.edu</a></p>
-
-              <p class="text-justify">You'd be surprised how much time people had on their hands before machines. Henry William Ravenel was an 18<sup>th</sup>-century botanist living in South Carolina. Utilizing text transcriptions of his personal diaries and image scans of the actual botanical collection he owned, scholars, researchers, and students can come to a centralized showcasing website.</p>
-            </div>
+                <p class="text-justify">{{{item.description}}}</p>
+              </div>
+            {{/each}}
           </div>
         </div>
       </div>
@@ -207,7 +138,7 @@
             <div class="col-sm-6">
               <h3>ADDY Awards</h3>
 
-              <p>Student Gold for Interactive Website - <strong>March 2012</strong></p>
+              <p>Student Gold for Interactive Website - <strong>Mar 2012</strong></p>
 
               <p class="text-justify">What happens when you're 17 years-old, your teacher recommends you to enter your senior project into a contest, and you learn after entering that it was only for college students?<br>You win gold. <small>Weird.</small></p>
             </div>
@@ -215,9 +146,9 @@
             <div class="col-sm-6">
               <h3>Boy Scouts of America</h3>
 
-              <p>Eagle Scout with 3 Palms - <strong>September 2011</strong></p>
+              <p>Eagle Scout with 3 Palms - <strong>Sept 2011</strong></p>
 
-              <p>Best Website within SR-5 - <strong>April 2010, April 2011</strong></p>
+              <p>Best Website within SR-5 - <strong>Apr 2010, Apr 2011</strong></p>
 
               <p class="text-justify">I look back at my past-self who wanted to quit Boy Scouts in 2009 and ask my current-self, "Why did I want to do that?"</p>
             </div>

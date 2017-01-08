@@ -2,29 +2,48 @@ import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 
 import { Portfolio } from '/imports/api/portfolio.js';
+import { Resume } from '/imports/api/resume.js';
 
 Meteor.startup(function () {
   // Insert portfolio items from the JSON file to the database on startup.
-  _.each(JSON.parse(Assets.getText('portfolio.json')), function (portfolio) {
-    const item = Portfolio.findOne({ title: portfolio.title });
-
-    if (item) {
-      updateDocument(portfolio, item);
-    } else {
-      console.log('Portfolio Insert Detected. Title: ' + portfolio.title);
-      Portfolio.insert(portfolio);
-    }
-  });
+  startupFile('resume.json', Resume);
+  startupFile('portfolio.json', Portfolio);
 });
 
 /**
- * Updates the database in the instance that the local file
- * has a different value.
+ * Startup
  *
- * @param file: The local file's JSON object.
- * @param base: The database's JSON object.
+ * Runs through a given file and detects if the document exists, and/or if it
+ * needs to be updated.
+ *
+ * @param {String} file       -- The file to run through.
+ * @param {Object} collection -- The collection to work with.
  */
-function updateDocument(file, base) {
+function startupFile(file, collection) {
+  _.each(JSON.parse(Assets.getText(file)), (item) => {
+    const search = collection.findOne({ title: item.title });
+
+    if (search) {
+      updateDocument(item, search, collection);
+    } else {
+      console.log('Collection insert detected from ' + file + '. Title: ' + item.title);
+
+      collection.insert(item);
+    }
+  });
+}
+
+/**
+ * Update
+ *
+ * Updates the database in the instance that the local file has a different
+ * value.
+ *
+ * @param {Object} file       -- The local file's JSON object.
+ * @param {Object} base       -- The database's JSON object.
+ * @param {Object} collection -- The collection to work with.
+ */
+function updateDocument(file, base, collection) {
   let setter = {};
 
   // Iterate through the file.
@@ -38,10 +57,10 @@ function updateDocument(file, base) {
 
   // If there's something new, update the database.
   if (Object.getOwnPropertyNames(setter).length) {
-    console.log('Portfolio Update Detected. Object:', setter);
+    console.log('Collection Update Detected. Object:', setter);
 
     // Queue the database once so we don't have to download more RAM.
-    Portfolio.update({
+    collection.update({
       _id: base._id
     }, {
       $set: setter
